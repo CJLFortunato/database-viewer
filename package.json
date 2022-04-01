@@ -1,6 +1,8 @@
 {
   "name": "fun-with-databases",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Having fun with Node.js, Express, and PostgreSQL",
+  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
