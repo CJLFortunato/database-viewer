@@ -1,0 +1,43 @@
+table {
+    table-layout: fixed;
+    width: 70%;
+    border-collapse: collapse;
+    border: 10px inset #cdc8c2;
+    background-color: white;
+    margin: 0 auto;
+  }
+  
+  thead th:nth-child(1) {
+    width: 10%;
+  }
+  
+  thead th:nth-child(2) {
+    width: 10%;
+  }
+  
+  thead th:nth-child(3) {
+    width: 10%;
+  }
+  
+  thead th:nth-child(4) {
+    width: 5%;
+  }
+  thead th:nth-child(5) {
+    width: 15%;
+  }
+  thead th:nth-child(6) {
+    width: 15%;
+  }
+  thead th:nth-child(7) {
+    width: 15%;
+  }
+  
+  th, td {
+    padding: 6px;
+    border: 1px solid #cdc8c2;
+  }
+
+  th{
+      background-color: #cdc8c2;
+      border: 3px outset #cdc8c2;
+  }
