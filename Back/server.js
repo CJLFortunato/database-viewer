@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { response } = require('express');
+const data = require('./data').data;
 
 const app = express();
 const port = 3000;
@@ -13,15 +14,9 @@ app.use(
   })
 );
 
+db.populatePeople(data);
 
-app.get('/', (req, res) => {
-    const data = db.getPeople(req, res);
-
-    if (!data) {
-        res.status(404).send();
-    }
-    res.status(200).send(data.json());
-});
+app.get('/', db.getPeople);
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`);
