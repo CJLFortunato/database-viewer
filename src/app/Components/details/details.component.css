@@ -19,3 +19,13 @@ button {
     box-shadow: 2px 2px 0px black, -2px -2px 0px black;
 
   }
+
+  .top-bar {
+    background: linear-gradient(90deg, #0c2371, #a8c0e4);
+    /* border: 5px ridge #cdc8c2; */
+    width: 99%;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }

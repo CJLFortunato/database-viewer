@@ -2,18 +2,19 @@
 
 
 <div class="details-panel" *ngIf="showdetails">
+  <div class="top-bar"><button (click)="toggleDetails()">X</button></div>
 
     <ul>
-        <li>{{person.id}}</li>
-        <li>{{person.firstname}}</li>
-        <li>{{person.lastname}}</li>
-        <li>{{person.gender}}</li>
-        <li>{{person.age}}</li>
-        <li>{{person.major}}</li>
-        <li>{{person.occupation}}</li>
-        <li>{{person.location}}</li>
-        
+      <li>{{person.id}}</li>
+      <li>{{person.firstname}}</li>
+      <li>{{person.lastname}}</li>
+      <li>{{person.gender}}</li>
+      <li>{{person.age}}</li>
+      <li>{{person.major}}</li>
+      <li>{{person.occupation}}</li>
+      <li>{{person.location}}</li>
+
     </ul>
 
-
+  
 </div>
