@@ -1,0 +1,19 @@
+<button id="details-btn" (click)="toggleDetails()">D</button>
+
+
+<div class="details-panel" *ngIf="showdetails">
+
+    <ul>
+        <li>{{person.id}}</li>
+        <li>{{person.firstname}}</li>
+        <li>{{person.lastname}}</li>
+        <li>{{person.gender}}</li>
+        <li>{{person.age}}</li>
+        <li>{{person.major}}</li>
+        <li>{{person.occupation}}</li>
+        <li>{{person.location}}</li>
+        
+    </ul>
+
+
+</div>

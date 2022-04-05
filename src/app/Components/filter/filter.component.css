@@ -1,0 +1,32 @@
+.filter-ctn {
+border: 1px solid green;
+width: 400px;
+margin: 10px;
+height: 84vh;
+border: 5px outset #cdc8c2;
+}
+
+h3 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    width: 50%;
+    margin: 5px;
+    height: 2rem;
+    border: 3px inset #cdc8c2;
+}
+label {
+    margin-top: .5rem;
+}
+.submit-btn {
+    border: 3px outset #cdc8c2;
+    margin-top: 1rem;
+    width: 30%;
+}

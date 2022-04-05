@@ -9,6 +9,7 @@
             <th>Major</th>
             <th>Occupation</th>
             <th>Location</th>
+            <th></th>
         </thead>
         <tbody *ngFor="let person of tableData">
             <tr>
@@ -19,6 +20,7 @@
                 <td>{{person.major}}</td>
                 <td>{{person.occupation}}</td>
                 <td>{{person.location}}</td>
+                <th> <app-details [person]="person"></app-details> <button id="edit-btn">E</button> <button id="delete-btn">X</button> </th>
             </tr>
 
         </tbody>

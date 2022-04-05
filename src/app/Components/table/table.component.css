@@ -4,7 +4,9 @@ table {
     border-collapse: collapse;
     border: 10px inset #cdc8c2;
     background-color: white;
-    margin: 0 auto;
+    margin: 0 15px;
+    height: 85vh;
+    overflow: scroll;
   }
   
   thead th:nth-child(1) {
@@ -31,6 +33,10 @@ table {
   thead th:nth-child(7) {
     width: 15%;
   }
+  thead th:nth-child(8) {
+    width: 10%;
+  }
+  
   
   th, td {
     padding: 6px;
@@ -40,4 +46,11 @@ table {
   th{
       background-color: #cdc8c2;
       border: 3px outset #cdc8c2;
+  }
+
+  button {
+    background-color: #cdc8c2;
+      border: 3px outset #cdc8c2;
+      border-radius: 0;
+      margin: 1px;
   }
