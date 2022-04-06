@@ -39,13 +39,14 @@ table {
   
   
   th, td {
-    padding: 6px;
+    padding: 3px;
     border: 1px solid #cdc8c2;
   }
 
   th{
       background-color: #cdc8c2;
       border: 3px outset #cdc8c2;
+      font-weight: 400;
   }
 
   button {

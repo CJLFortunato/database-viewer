@@ -10,8 +10,8 @@ export class DetailsComponent implements OnInit {
 
   @Input() person: Person = {
     id: "",
-    firstname: '',
-    lastname: '',
+    first_name: '',
+    last_name: '',
     gender: '',
     age: 0,
     major: '',

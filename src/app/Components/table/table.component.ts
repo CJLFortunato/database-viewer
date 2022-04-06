@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { data, Person } from './testData';
+import { ApiService } from 'src/app/services/api.service';
+import { Person } from 'src/app/Interfaces';
 
 @Component({
   selector: 'app-table',
@@ -8,11 +9,13 @@ import { data, Person } from './testData';
 })
 export class TableComponent implements OnInit {
 
-  tableData: Person[] = data;
+  tableData: Person[] = [];
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.apiService.getPeople().subscribe((people) => this.tableData = people);
+    console.log(this.tableData);
   }
-
+  
 }

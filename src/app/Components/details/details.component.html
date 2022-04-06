@@ -3,11 +3,12 @@
 
 <div class="details-panel" *ngIf="showdetails">
   <div class="top-bar"><button (click)="toggleDetails()">X</button></div>
+  {{person}}
 
     <ul>
       <li>{{person.id}}</li>
-      <li>{{person.firstname}}</li>
-      <li>{{person.lastname}}</li>
+      <li>{{person.first_name}}</li>
+      <li>{{person.last_name}}</li>
       <li>{{person.gender}}</li>
       <li>{{person.age}}</li>
       <li>{{person.major}}</li>
