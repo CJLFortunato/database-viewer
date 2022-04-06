@@ -28,7 +28,6 @@ export class DetailsComponent implements OnInit {
 
   toggleDetails() {
     this.showdetails = !this.showdetails;
-    console.log('click');
   }
 
 }

@@ -20,7 +20,7 @@ export class TableComponent implements OnInit {
     
   }
 
-  onClickDelete(id: string) {
+  onDelete(id: string) {
     this.apiService.deletePerson(id).subscribe((res) => {console.log(res); this.apiService.getPeople().subscribe((people) => this.tableData = people)});
   }
   

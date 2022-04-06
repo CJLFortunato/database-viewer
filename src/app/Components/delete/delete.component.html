@@ -1,1 +1,20 @@
-<p>delete works!</p>
+<button id="delete-btn" (click)="toggleDelete()">X</button>
+
+
+<div class="details-panel" *ngIf="showdelete">
+  <div class="top-bar"><button (click)="toggleDelete()">X</button></div>
+ 
+
+    <p>Are you sure you want to delete {{person.first_name}} {{person.last_name}} from the database ?</p>
+    <br>
+    <p><strong>Warning: this can not be undone! </strong></p>
+
+    <div class="btn-ctn">
+        <button class="text-btn" (click)="onClickDelete(person.id)" (click)="toggleDelete()">OK</button>
+        <button class="text-btn" (click)="toggleDelete()">Cancel</button>
+    </div>
+
+    
+
+  
+</div>
