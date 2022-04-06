@@ -14,11 +14,17 @@ const httpOptions = {
 })
 export class ApiService {
 
-  private apiUrl = 'http://localhost:3000/';
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
   getPeople(): Observable<Person[]> {
     return this.http.get<Person[]>(this.apiUrl);
+  }
+
+  deletePerson(id: string): Observable<Person>{
+    const url= `${this.apiUrl}/${id}`;
+
+    return this.http.delete<Person>(url);
   }
 }

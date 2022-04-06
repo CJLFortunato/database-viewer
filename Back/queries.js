@@ -22,14 +22,14 @@ const populatePeople = (arr) => {
 }
 
 const getPeople = (request, response) => {
-    console.log('get started');
+    
     pool.query('SELECT * FROM people', (error, results) => {
       if (error) {
         throw error
       }
       response.status(200).json(results.rows)
     })
-    console.log('get finished');
+    
   }
 
   const createPerson = (request, response) => { //TODO
@@ -50,7 +50,8 @@ const getPeople = (request, response) => {
       if (error) {
         throw error
       }
-      response.status(200).send(`Person deleted with ID: ${id}`)
+
+      response.status(200).send({id});
     });
   };
 

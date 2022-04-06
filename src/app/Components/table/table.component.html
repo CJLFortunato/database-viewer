@@ -20,7 +20,7 @@
                 <td>{{person.major}}</td>
                 <td>{{person.occupation}}</td>
                 <td>{{person.location}}</td>
-                <th> <app-details [person]="person"></app-details> <button id="edit-btn">E</button> <button id="delete-btn">X</button> </th>
+                <th> <app-details [person]="person"></app-details> <button id="edit-btn">E</button> <button id="delete-btn" (click)="onClickDelete(person.id)">X</button> </th>
             </tr>
 
         </tbody>
