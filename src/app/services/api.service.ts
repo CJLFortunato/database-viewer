@@ -30,29 +30,31 @@ export class ApiService {
 
   getFilteredPeople(filter: Filter) {
     let urlQuery = this.apiUrl + '/?';
+    console.log("Filter made it to api service");
 
     if(filter.firstname) {
-      urlQuery += `first_name=${filter.firstname}`;
+      urlQuery += `first_name=${filter.firstname}&`;
     }
     if(filter.lastname) {
-      urlQuery += `first_name=${filter.lastname}`;
+      urlQuery += `first_name=${filter.lastname}&`;
     }
     if(filter.gender) {
-      urlQuery += `first_name=${filter.gender}`;
+      urlQuery += `first_name=${filter.gender}&`;
     }
     if(filter.age) {
-      urlQuery += `first_name=${filter.age}`;
+      urlQuery += `first_name=${filter.age}&`;
     }
     if(filter.major) {
-      urlQuery += `first_name=${filter.major}`;
+      urlQuery += `first_name=${filter.major}&`;
     }
     if(filter.occupation) {
-      urlQuery += `first_name=${filter.occupation}`;
+      urlQuery += `first_name=${filter.occupation}&`;
     }
     if(filter.location) {
-      urlQuery += `first_name=${filter.location}`;
+      urlQuery += `first_name=${filter.location}&`;
     }
-
+    console.log("Filter is about to be sent to backend");
+    console.log(urlQuery);
     return this.http.get<Person[]>(urlQuery);
 
   }

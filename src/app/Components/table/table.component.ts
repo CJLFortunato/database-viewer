@@ -33,10 +33,12 @@ export class TableComponent implements OnInit {
   }
 
   callFilter(filter: Filter) {
+    console.log("Filter made it to table component");
     if(!filter.firstname && !filter.lastname && !filter.gender && !filter.age && !filter.major && !filter.occupation && !filter.location) {
       return;
     }
     this.apiService.getFilteredPeople(filter).subscribe((people) => this.tableData = people);
+    console.log("Filter was sent to service");
   }
   
 }

@@ -40,6 +40,7 @@ export class FilterComponent implements OnInit {
     };
 
     this.onApplyFilter.emit(filterParams);
+    console.log("Form submitted");
 
     this.firstName = "";
     this.lastName = "";

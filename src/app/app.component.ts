@@ -22,6 +22,6 @@ export class AppComponent {
   makeFilter(filter: Filter) {
 
     this.filter = filter;
-
+    console.log("Filter saved in app component");
   }
 }
