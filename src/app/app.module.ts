@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './Components/table/table.component';
 import { FilterComponent } from './Components/filter/filter.component';
 import { DetailsComponent } from './Components/details/details.component';
+import { DeleteComponent } from './Components/delete/delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     FilterComponent,
-    DetailsComponent
+    DetailsComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
