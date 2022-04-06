@@ -3,23 +3,22 @@ const { v4: uuidv4 } = require('uuid');
 
 const populatePeople = (arr) => {
     console.log('function started');
-    let id = 0;
     
-    // for (const person of arr) {
-    //     console.log('loop started');
-    //     id++;
-    //     console.log('id generated');
+    
+    for (const person of arr) {
+         
+        let id = uuidv4();
+         
          pool.query(
-            "INSERT INTO people(id, first_name, last_name, gender, age, major, occupation, location)VALUES('456', 'Maja', 'Pedersen', 'Female', 18, 'Veterinary Studies', 'Student', 'Rhemes')",
+            "INSERT INTO people(id, first_name, last_name, gender, age, major, occupation, location)VALUES($1, $2, $3, $4, $5, $6, $7, $8)", 
+            [id, person.firstname, person.lastname, person.gender, person.age, person.major, person.occupation, person.location],
             (err, res) => {
               console.log(err, res);
              
             }
           );
-    //       console.log('query sent');
-    // }
+     }
     
-    console.log('function finished');
 }
 
 const getPeople = (request, response) => {
@@ -31,8 +30,32 @@ const getPeople = (request, response) => {
     })
   }
 
+  const createPerson = (request, response) => {
+    const { name, email } = request.body
+  
+    pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(201).send(`User added with ID: ${results.insertId}`)
+    })
+  }
+
+  const deletePerson = (request, response) => {
+    const id = request.params.id;
+  
+    pool.query('DELETE FROM people WHERE id = $1', [id], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).send(`Person deleted with ID: ${id}`)
+    });
+  };
+
 
 module.exports = {
     populatePeople,
-    getPeople
+    getPeople,
+    createPerson,
+    deletePerson
 };

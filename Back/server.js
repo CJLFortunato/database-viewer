@@ -14,9 +14,11 @@ app.use(
   })
 );
 
-db.populatePeople(data);
+
 
 app.get('/', db.getPeople);
+
+app.delete('/:id', db.deletePerson);
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`);

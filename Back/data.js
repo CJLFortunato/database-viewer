@@ -36,7 +36,7 @@ const DATA = [
         gender: 'Female',
         age: 17,
         major: 'None',
-        occupation: 'Student',
+        occupation: 'High Schooler',
         location: 'Monolith City'
     },
     {
@@ -136,7 +136,7 @@ const DATA = [
         gender: 'Female',
         age: 17,
         major: 'None',
-        occupation: 'Student',
+        occupation: 'High Schooler',
         location: 'Monolith City'
     },
     {
@@ -146,7 +146,7 @@ const DATA = [
         gender: 'Female',
         age: 17,
         major: 'None',
-        occupation: 'Student',
+        occupation: 'High Schooler',
         location: 'Monolith City'
     },
     {
