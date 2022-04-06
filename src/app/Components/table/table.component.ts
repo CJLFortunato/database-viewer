@@ -1,6 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-import { Person } from 'src/app/Interfaces';
+import { Filter, Person } from 'src/app/Interfaces';
 
 @Component({
   selector: 'app-table',
@@ -9,7 +9,15 @@ import { Person } from 'src/app/Interfaces';
 })
 export class TableComponent implements OnInit {
 
-  
+  @Input() filter: Filter  = {
+    firstname: "",
+    lastname: "",
+    gender: "",
+    age: 0,
+    major: "",
+    occupation: "",
+    location: ""
+  };
 
   tableData: Person[] = [];
 
@@ -22,6 +30,13 @@ export class TableComponent implements OnInit {
 
   onDelete(id: string) {
     this.apiService.deletePerson(id).subscribe((res) => {console.log(res); this.apiService.getPeople().subscribe((people) => this.tableData = people)});
+  }
+
+  callFilter(filter: Filter) {
+    if(!filter.firstname && !filter.lastname && !filter.gender && !filter.age && !filter.major && !filter.occupation && !filter.location) {
+      return;
+    }
+    this.apiService.getFilteredPeople(filter).subscribe((people) => this.tableData = people);
   }
   
 }

@@ -2,8 +2,8 @@
   <h1>Fun with Databases</h1>
 </header>
 <main>
-  <app-filter></app-filter>
-  <app-table></app-table>
+  <app-filter (onApplyFilter)="makeFilter(filter)"></app-filter>
+  <app-table [filter]="this.filter"></app-table>
 </main>
 <footer>
 <P>Made by CJL Fortunato</P>

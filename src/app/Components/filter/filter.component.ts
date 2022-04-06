@@ -16,7 +16,7 @@ export class FilterComponent implements OnInit {
   occupation: string = "";
   location: string = "";
 
-  @Output() onApplyFilter: EventEmitter<Filter> = new EventEmitter();
+  @Output() onApplyFilter: EventEmitter<Filter | {}> = new EventEmitter();
 
   constructor() { }
 
