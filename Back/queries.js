@@ -22,15 +22,17 @@ const populatePeople = (arr) => {
 }
 
 const getPeople = (request, response) => {
+    console.log('get started');
     pool.query('SELECT * FROM people', (error, results) => {
       if (error) {
         throw error
       }
       response.status(200).json(results.rows)
     })
+    console.log('get finished');
   }
 
-  const createPerson = (request, response) => {
+  const createPerson = (request, response) => { //TODO
     const { name, email } = request.body
   
     pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (error, results) => {

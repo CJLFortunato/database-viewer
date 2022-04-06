@@ -6,8 +6,9 @@ const data = require('./data').data;
 const app = express();
 const port = 3000;
 const db = require('./queries');
+const cors = require('cors');
 
-app.use(bodyParser.json());
+app.use(bodyParser.json(), cors());
 app.use(
   bodyParser.urlencoded({
     extended: true,
