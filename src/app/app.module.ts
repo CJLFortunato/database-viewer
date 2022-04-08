@@ -9,6 +9,7 @@ import { FilterComponent } from './Components/filter/filter.component';
 import { DetailsComponent } from './Components/details/details.component';
 import { DeleteComponent } from './Components/delete/delete.component';
 import { AddPersonComponent } from './Components/add-person/add-person.component';
+import { EditPersonComponent } from './Components/edit-person/edit-person.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddPersonComponent } from './Components/add-person/add-person.component
     FilterComponent,
     DetailsComponent,
     DeleteComponent,
-    AddPersonComponent
+    AddPersonComponent,
+    EditPersonComponent
   ],
   imports: [
     BrowserModule,

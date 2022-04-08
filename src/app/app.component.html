@@ -3,7 +3,7 @@
 </header>
 <main>
   <app-filter (onApplyFilter)="makeFilter(filter)"></app-filter>
-  <app-table [tableData]="data" (onClickDelete)="onDelete($event)"></app-table>
+  <app-table [tableData]="data" (onClickDelete)="onDelete($event)" (onClickEdit)="onEdit($event)"></app-table>
   <div class="right-btn-ctn">
     <app-add-person (onAddPerson)="addPerson($event)"></app-add-person>
   </div>

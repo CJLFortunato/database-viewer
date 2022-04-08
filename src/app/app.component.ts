@@ -39,4 +39,8 @@ export class AppComponent {
     this.apiService.addPerson(person).subscribe(() => this.apiService.getPeople().subscribe((people) => this.data = people));
 
   }
+
+  onEdit(person: Person) {
+    this.apiService.editPerson(person).subscribe(() => this.apiService.getPeople().subscribe((people) => this.data = people));
+  }
 }

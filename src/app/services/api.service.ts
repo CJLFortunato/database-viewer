@@ -31,5 +31,8 @@ export class ApiService {
   addPerson(person: Person): Observable<Person> {
     return this.http.post<Person>(this.apiUrl, person, httpOptions);
   }
-
+  
+  editPerson(person: Person): Observable<Person> {
+    return this.http.put<Person>(this.apiUrl, person, httpOptions);
+  }
 }

@@ -20,7 +20,7 @@
                 <td>{{person.major}}</td>
                 <td>{{person.occupation}}</td>
                 <td>{{person.location}}</td>
-                <td class="btn-ctn"> <app-details [person]="person"></app-details> <button id="edit-btn">E</button> <app-delete [person]="person" (onDeletePerson)="onDelete(person.id)"></app-delete> </td>
+                <td class="btn-ctn"> <app-details [person]="person"></app-details> <app-edit-person [person]="person" (onEditPerson)="onEdit($event)"></app-edit-person> <app-delete [person]="person" (onDeletePerson)="onDelete(person.id)"></app-delete> </td>
             </tr>
 
         </tbody>

@@ -12,6 +12,7 @@ export class TableComponent implements OnInit {
   @Input() tableData: Person[] = [];
 
   @Output() onClickDelete: EventEmitter<string> = new EventEmitter();
+  @Output() onClickEdit: EventEmitter<Person> = new EventEmitter();
 
   constructor() { }
 
@@ -22,7 +23,9 @@ export class TableComponent implements OnInit {
     this.onClickDelete.emit(id);
   }
   
-
+  onEdit(person: Person) {
+    this.onClickEdit.emit(person);
+  }
 
   
 }

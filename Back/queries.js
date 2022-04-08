@@ -32,14 +32,7 @@ const getPeople = (request, response) => {
     })
   };
 
-
-
-
-
-
-
 const createPerson = (request, response) => { 
-
 
   const {
     first_name,
