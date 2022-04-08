@@ -57,6 +57,31 @@ const createPerson = (request, response) => {
   })
 }
 
+const updatePerson = (request, response) => {
+  const {
+    id,
+    first_name,
+    last_name,
+    gender,
+    age,
+    major,
+    occupation,
+    location
+  } = request.body;
+
+  pool.query(
+    'UPDATE people SET first_name = $2, last_name = $3, gender = $4, age = $5, major = $6, occupation = $7, location = $8 WHERE id = $1',
+    [id, first_name, last_name, gender, parseInt(age), major, occupation, location],
+    (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).send(results.rows);
+    }
+  )
+
+}
+
 const deletePerson = (request, response) => {
   const id = request.params.id;
 
@@ -71,10 +96,21 @@ const deletePerson = (request, response) => {
   });
 };
 
+const getTableDetails = () => {
+  pool.query("SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'people'", (error, results) => {
+    if (error) {
+      throw error
+    }
+    console.table(results.rows);
+  })
+};
+
 
 module.exports = {
   populatePeople,
   getPeople,
   createPerson,
-  deletePerson
+  deletePerson,
+  updatePerson,
+  getTableDetails
 };

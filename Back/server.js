@@ -15,10 +15,12 @@ app.use(
   })
 );
 
+db.getTableDetails();
 
 
 app.get('/', db.getPeople);
 app.post('/', db.createPerson);
+app.put('/', db.updatePerson);
 app.delete('/:id', db.deletePerson);
 
 app.listen(port, () => {

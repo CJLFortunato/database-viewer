@@ -9,26 +9,26 @@
   <form (ngSubmit)="onSubmit()">
   
       <label for="first-name">First Name
-      <input type="text" id="first-name" name="first-name" [(ngModel)]="firstName" required>
+      <input type="text" id="first-name" name="first-name" [(ngModel)]="firstName" maxlength="20" required>
     </label>
 
       <label for="last-name">Last Name
-      <input type="text" id="last-name" name="last-name" [(ngModel)]="lastName" required>
+      <input type="text" id="last-name" name="last-name" [(ngModel)]="lastName" maxlength="30" required>
   </label>
       <label for="gender">Gender
-      <input type="text" id="gender" name="gender" [(ngModel)]="gender" required>
+      <input type="text" id="gender" name="gender" [(ngModel)]="gender" maxlength="20" required>
   </label>
       <label for="age">Age
       <input type="number" id="age" name="age" [(ngModel)]="age" required>
   </label>
       <label for="major">Major
-      <input type="text" id="major" name="major" [(ngModel)]="major" required>
+      <input type="text" id="major" name="major" [(ngModel)]="major" maxlength="20" required>
   </label>
       <label for="occupation">Occupation
-      <input type="text" id="occupation" name="occupation" [(ngModel)]="occupation" required>
+      <input type="text" id="occupation" name="occupation" [(ngModel)]="occupation" maxlength="30" required>
   </label>
       <label for="location">Location
-      <input type="text" id="location" name="location" [(ngModel)]="location" required>
+      <input type="text" id="location" name="location" [(ngModel)]="location" maxlength="30" required>
   </label>
   <p class="error">{{error}}</p>
       <input type="submit" value="Apply" class="submit-btn" >
