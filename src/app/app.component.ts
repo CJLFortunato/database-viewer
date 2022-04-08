@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Filter } from './Interfaces';
+import { Component, Input } from '@angular/core';
+import { Filter, Person } from 'src/app/Interfaces';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +10,27 @@ import { Filter } from './Interfaces';
 export class AppComponent {
   title = 'fun-with-databases';
 
-    filter: Filter  = {
-    firstname: "",
-    lastname: "",
-    gender: "",
-    age: 0,
-    major: "",
-    occupation: "",
-    location: ""
-  };
+  @Input() filter = {};
 
-  makeFilter(filter: Filter) {
+  data: Person[] = [];
+
+  constructor(private apiService: ApiService) {
+
+  }
+
+  ngOnInit(): void {
+    console.log("Putting a ngOnInit in the app component works!");
+    this.apiService.getPeople().subscribe((people) => this.data = people);
+    
+  }
+  makeFilter(filter: Filter | {}) {
 
     this.filter = filter;
     console.log("Filter saved in app component");
+    console.log(filter);
+  }
+
+  onDelete(id: string) {
+    this.apiService.deletePerson(id).subscribe((res) => {console.log(res); this.apiService.getPeople().subscribe((people) => this.data = people)});
   }
 }

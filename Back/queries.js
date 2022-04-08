@@ -24,42 +24,17 @@ const populatePeople = (arr) => {
 }
 
 const getPeople = (request, response) => {
-  
-
-  if (request.query) {
-    const firstname = request.query.firstname;
-    const lastname = request.query.lastname;
-    const gender = request.query.gender;
-    const age = request.query.age;
-    const major = request.query.major;
-    const occupation = request.query.occupation;
-    const location = request.query.location;
-    console.log("Filter made it to backend");
-    
-
-    pool.query('SELECT * FROM people WHERE first_name=$1 AND last_name=$2 AND gender=$3 AND age= $4 AND major=$5 AND occupation=$6 AND location=$7;',
-      [firstname, lastname, gender, age, major, occupation, location],
-      (error, results) => {
-        if (error) {
-          throw error
-        }
-        response.status(200).json(results.rows)
-        console.log("Filter SQL query didn't throw an error");
-      })
-
-  } else {
-
     pool.query('SELECT * FROM people', (error, results) => {
       if (error) {
         throw error
       }
       response.status(200).json(results.rows)
     })
-  }
+  };
 
 
 
-}
+
 
 
 

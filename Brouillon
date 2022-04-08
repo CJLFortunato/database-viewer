@@ -1,0 +1,79 @@
+filterData(data: Person[], filter: Filter) {
+
+    console.log("filter received in table");
+    
+    
+    const filterFunc = (data: any[], prop: string | number, cond: any) => {
+        return data.filter((item) => item[prop] === cond); 
+    };
+
+    let filteredData: any[] = [];
+
+    if (filter.firstname) {
+      const temp = filterFunc(data, "first_name", filter.firstname);
+      filteredData.concat(temp);
+    }
+    if (filter.lastname) {
+      const temp = filterFunc(data, "last_name", filter.lastname);
+      filteredData.concat(temp);
+    }
+    if (filter.gender) {
+      const temp = filterFunc(data, "gender", filter.gender);
+      filteredData.concat(temp);
+    }
+    if (filter.age) {
+      const temp = filterFunc(data, "age", filter.age);
+      filteredData.concat(temp);
+    }
+    if (filter.major) {
+      const temp = filterFunc(data, "major", filter.major);
+      filteredData.concat(temp);
+    }
+    if (filter.occupation) {
+      const temp = filterFunc(data, "occupation", filter.occupation);
+      filteredData.concat(temp);
+    }
+    if (filter.location) {
+      const temp = filterFunc(data, "location", filter.location);
+      filteredData.concat(temp);
+    }
+
+    return filteredData? filteredData : data;
+    
+  }
+
+  ============================================================================================
+
+  getFilteredPeople(filter: Filter) {
+    let urlQuery = this.apiUrl + '/?';
+    console.log("Filter made it to api service");
+    console.log(filter);
+    
+
+   
+      urlQuery += `first_name=${filter.firstname || "null"}&`;
+    
+
+      urlQuery += `first_name=${filter.lastname || "null"}&`;
+    
+    
+      urlQuery += `first_name=${filter.gender || "null"}&`;
+    
+    
+      urlQuery += `first_name=${filter.age || "null"}&`;
+    
+  
+      urlQuery += `first_name=${filter.major || "null"}&`;
+    
+   
+      urlQuery += `first_name=${filter.occupation || "null"}&`;
+    
+  
+      urlQuery += `first_name=${filter.location || "null"}`;
+    
+    console.log("Filter is about to be sent to backend");
+    console.log(urlQuery);
+    return this.http.get<Person[]>(urlQuery);
+
+  }
+}

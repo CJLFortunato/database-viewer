@@ -30,7 +30,6 @@ export class DeleteComponent implements OnInit {
 
   toggleDelete() {
     this.showdelete = !this.showdelete;
-    console.log('click');
   }
 
   onClickDelete(id: string) {

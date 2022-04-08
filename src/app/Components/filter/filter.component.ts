@@ -21,11 +21,14 @@ export class FilterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   onSubmit() {
 
     if(!this.firstName && !this.lastName && !this.gender && !this.age && !this.major && !this.occupation && !this.location) {
+      console.log("The form was empty");
+      
       return;
     }
 
@@ -38,7 +41,7 @@ export class FilterComponent implements OnInit {
       occupation: this.occupation,
       location: this.location
     };
-
+    console.log(filterParams);
     this.onApplyFilter.emit(filterParams);
     console.log("Form submitted");
 

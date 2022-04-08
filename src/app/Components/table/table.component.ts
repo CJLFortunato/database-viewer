@@ -1,5 +1,5 @@
-import { Component, OnInit, Input} from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+
 import { Filter, Person } from 'src/app/Interfaces';
 
 @Component({
@@ -8,37 +8,21 @@ import { Filter, Person } from 'src/app/Interfaces';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  
+  @Input() tableData: Person[] = [];
 
-  @Input() filter: Filter  = {
-    firstname: "",
-    lastname: "",
-    gender: "",
-    age: 0,
-    major: "",
-    occupation: "",
-    location: ""
-  };
+  @Output() onClickDelete: EventEmitter<string> = new EventEmitter();
 
-  tableData: Person[] = [];
-
-  constructor(private apiService: ApiService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.apiService.getPeople().subscribe((people) => this.tableData = people);
-    
   }
 
   onDelete(id: string) {
-    this.apiService.deletePerson(id).subscribe((res) => {console.log(res); this.apiService.getPeople().subscribe((people) => this.tableData = people)});
+    this.onClickDelete.emit(id);
   }
+  
 
-  callFilter(filter: Filter) {
-    console.log("Filter made it to table component");
-    if(!filter.firstname && !filter.lastname && !filter.gender && !filter.age && !filter.major && !filter.occupation && !filter.location) {
-      return;
-    }
-    this.apiService.getFilteredPeople(filter).subscribe((people) => this.tableData = people);
-    console.log("Filter was sent to service");
-  }
+
   
 }
