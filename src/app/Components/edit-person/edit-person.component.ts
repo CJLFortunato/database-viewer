@@ -37,6 +37,8 @@ export class EditPersonComponent implements OnInit {
     this.major= this.person.major;
     this.occupation= this.person.occupation;
     this.location= this.person.location;
+
+    this.error = "";
   }
 
   
@@ -54,6 +56,7 @@ export class EditPersonComponent implements OnInit {
   }
 
   onSubmit() {
+    
 
     if(!this.firstName || !this.lastName || !this.gender || !this.age || !this.major || !this.occupation || !this.location) {
       
@@ -96,6 +99,8 @@ export class EditPersonComponent implements OnInit {
       occupation: this.occupation,
       location: this.location
     };
+
+    this.error = "";
     console.log(editedPerson);
     this.onEditPerson.emit(editedPerson);
     console.log("Form submitted");

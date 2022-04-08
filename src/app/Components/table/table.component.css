@@ -15,6 +15,10 @@ table {
     
     background-color: white; 
   }
+
+  tbody {
+    padding-top: 4rem;
+  }
   
   thead th:nth-child(1) {
     width: 10%;

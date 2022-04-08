@@ -26,6 +26,7 @@ export class AddPersonComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.error = "";
   }
 
   toggleAdd() {
@@ -33,6 +34,7 @@ export class AddPersonComponent implements OnInit {
   }
 
   onSubmit() {
+    this.error = "";
 
     if(!this.firstName || !this.lastName || !this.gender || !this.age || !this.major || !this.occupation || !this.location) {
       
