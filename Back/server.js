@@ -18,7 +18,7 @@ app.use(
 
 
 app.get('/', db.getPeople);
-
+app.post('/', db.createPerson);
 app.delete('/:id', db.deletePerson);
 
 app.listen(port, () => {

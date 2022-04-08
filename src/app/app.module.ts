@@ -8,6 +8,7 @@ import { TableComponent } from './Components/table/table.component';
 import { FilterComponent } from './Components/filter/filter.component';
 import { DetailsComponent } from './Components/details/details.component';
 import { DeleteComponent } from './Components/delete/delete.component';
+import { AddPersonComponent } from './Components/add-person/add-person.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DeleteComponent } from './Components/delete/delete.component';
     TableComponent,
     FilterComponent,
     DetailsComponent,
-    DeleteComponent
+    DeleteComponent,
+    AddPersonComponent
   ],
   imports: [
     BrowserModule,

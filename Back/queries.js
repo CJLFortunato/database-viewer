@@ -38,17 +38,29 @@ const getPeople = (request, response) => {
 
 
 
-const createPerson = (request, response) => { //TODO
-  const {
-    name,
-    email
-  } = request.body
+const createPerson = (request, response) => { 
 
-  pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (error, results) => {
+
+  const {
+    first_name,
+    last_name,
+    gender,
+    age,
+    major,
+    occupation,
+    location
+  } = request.body
+  const id = uuidv4();
+
+  pool.query("INSERT INTO people(id, first_name, last_name, gender, age, major, occupation, location)VALUES($1, $2, $3, $4, $5, $6, $7, $8)",
+  [id, first_name, last_name, gender, parseInt(age), major, occupation, location], (error, results) => {
     if (error) {
+      
       throw error
     }
-    response.status(201).send(`User added with ID: ${results.insertId}`)
+    
+    response.status(201).send(results.rows);
+    
   })
 }
 

@@ -33,4 +33,10 @@ export class AppComponent {
   onDelete(id: string) {
     this.apiService.deletePerson(id).subscribe((res) => {console.log(res); this.apiService.getPeople().subscribe((people) => this.data = people)});
   }
+
+  addPerson(person: Person) {
+
+    this.apiService.addPerson(person).subscribe(() => this.apiService.getPeople().subscribe((people) => this.data = people));
+
+  }
 }

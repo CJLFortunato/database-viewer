@@ -28,4 +28,8 @@ export class ApiService {
     return this.http.delete<Person>(url);
   }
 
+  addPerson(person: Person): Observable<Person> {
+    return this.http.post<Person>(this.apiUrl, person, httpOptions);
+  }
+
 }

@@ -1,12 +1,19 @@
+.table {
+  width: 55vw;
+  height: 85vh;
+  border: 10px inset #cdc8c2;
+  overflow: scroll;
+  background-color: white;
+  margin: 0 15px;
+}
+
+
 table {
     table-layout: fixed;
-    width: 70%;
+    width: 100%;
     border-collapse: collapse;
-    border: 10px inset #cdc8c2;
-    background-color: white;
-    margin: 0 15px;
-    height: 85vh;
-    overflow: scroll;
+    
+    background-color: white; 
   }
   
   thead th:nth-child(1) {
@@ -38,15 +45,16 @@ table {
   }
   
   
-  th, td {
-    padding: 3px;
-    border: 1px solid #cdc8c2;
+  td {
+    padding: 1px;
+    border-bottom: 1px solid #cdc8c2;
   }
 
   th{
       background-color: #cdc8c2;
       border: 3px outset #cdc8c2;
       font-weight: 400;
+      padding: 4px;
   }
 
   button {
@@ -54,4 +62,9 @@ table {
       border: 3px outset #cdc8c2;
       border-radius: 0;
       margin: 1px;
+  }
+
+  .btn-ctn {
+    display: flex;
+    justify-content: space-evenly;
   }
