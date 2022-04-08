@@ -4,6 +4,7 @@ width: 400px;
 margin: 10px;
 height: 84vh;
 border: 5px outset #cdc8c2;
+background-color: #cdc8c2;
 }
 
 h3 {
@@ -12,21 +13,27 @@ h3 {
 
 form {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+
 }
 input {
-    width: 50%;
+    width: 75%;
     margin: 5px;
     height: 2rem;
     border: 3px inset #cdc8c2;
 }
 label {
     margin-top: .5rem;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .submit-btn {
     border: 3px outset #cdc8c2;
-    margin-top: 1rem;
+    margin-top: 3rem;
     width: 30%;
 }

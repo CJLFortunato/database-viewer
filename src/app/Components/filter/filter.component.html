@@ -1,33 +1,33 @@
 <div class="filter-ctn">
 
-    <h3>Filter content</h3>
+  <h3>Filter content</h3>
 
-<form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()">
 
-    <label for="first-name">First Name</label>
-    <input type="text" id="first-name" name="first-name" [(ngModel)]="firstName">
+    <label for="first-name">First Name
+      <input type="text" id="first-name" name="first-name" [(ngModel)]="firstName">
+    </label>
+    <label for="last-name">Last Name
+      <input type="text" id="last-name" name="last-name" [(ngModel)]="lastName">
+    </label>
+    <label for="gender">Gender
+      <input type="text" id="gender" name="gender" [(ngModel)]="gender">
+    </label>
+    <label for="age">Age
+      <input type="number" id="age" name="age" [(ngModel)]="age">
+    </label>
+    <label for="major">Major
+      <input type="text" id="major" name="major" [(ngModel)]="major">
+    </label>
+    <label for="occupation">Occupation
+      <input type="text" id="occupation" name="occupation" [(ngModel)]="occupation">
+    </label>
+    <label for="location">Location
+      <input type="text" id="location" name="location" [(ngModel)]="location">
+    </label>
+    <input type="submit" value="Apply" class="submit-btn">
 
-    <label for="last-name">Last Name</label>
-    <input type="text" id="last-name" name="last-name" [(ngModel)]="lastName">
-
-    <label for="gender">Gender</label>
-    <input type="text" id="gender" name="gender" [(ngModel)]="gender">
-
-    <label for="age">Age</label>
-    <input type="number" id="age" name="age" [(ngModel)]="age">
-
-    <label for="major">Major</label>
-    <input type="text" id="major" name="major" [(ngModel)]="major">
-
-    <label for="occupation">Occupation</label>
-    <input type="text" id="occupation" name="occupation" [(ngModel)]="occupation">
-
-    <label for="location">Location</label>
-    <input type="text" id="location" name="location" [(ngModel)]="location">
-
-    <input type="submit" value="Apply" class="submit-btn" >
-
-</form>
+  </form>
 
 
 
@@ -36,4 +36,3 @@
 
 
 </div>
-

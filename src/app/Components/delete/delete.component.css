@@ -9,17 +9,18 @@ button {
     border: 3px inset #cdc8c2;
   }
 
-  .details-panel{
+  .delete-panel{
     position: fixed;
     border: 3px outset #cdc8c2;
     background-color: #cdc8c2;
     top: 180px;
     left: 700px;
     width: 550px;
-    height: 300px;
+    height: 250px;
     box-shadow: 2px 2px 0px black, -2px -2px 0px black;
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
 
   }
 
@@ -33,8 +34,20 @@ button {
     justify-content: flex-end;
   }
 
+  .text-ctn {
+    width: 90%;
+    /* height: 80%; */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    /* border: 1px dashed darkolivegreen; */
+    margin-top: 2.5rem;
+  }
+
   p {
       font-size: 1.2rem;
+      /* border: 1px dashed darkolivegreen; */
+      margin: 0;
   }
 
   strong {
@@ -42,12 +55,14 @@ button {
   }
 
   .text-btn {
-    justify-self: flex-end;
-    align-self: center;
+    height: 2rem;
     width: 15%;
     margin: 1rem;
   }
 
   .btn-ctn {
-      margin-top: 2rem;
+      margin-top: 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
   }

@@ -33,21 +33,34 @@ button {
     justify-content: flex-end;
   }
 
-  ul {
-    border: 1px solid purple;
-    width: 80%;
-    margin: 2rem auto;
-    height: 75%;
-  }
+  form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
 
-  li {
-    list-style-type: none;
-    margin: 10px;
-    display: inline-block;
-  }
+}
+input {
+    width: 75%;
+    margin: 5px;
+    height: 2rem;
+    border: 3px inset #cdc8c2;
+}
+input:disabled {
+  background-color: #cdc8c2;
+}
+label {
+    margin-top: .5rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
   .close-btn {
     justify-self: flex-end;
     align-self: center;
     width: 15%;
+    margin-top: 2rem;
   }
