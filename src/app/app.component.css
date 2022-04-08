@@ -31,8 +31,24 @@ main {
     align-content: flex-start;
 }
 
-/* .right-btn-ctn {
+.right-btn-ctn {
     border: 1px solid red;
-} */
-
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-items: flex-start;
+    align-content: flex-start;
+}
+button {
+    border: 3px outset #cdc8c2;
+    width: 50%;
+    margin: 1px 0;
+    height: 2rem;
+    background-color: #cdc8c2;
+    border: 3px outset #cdc8c2;
+    border-radius: 0;
+}
+app-add-person {
+    width: 100%;
+}
 

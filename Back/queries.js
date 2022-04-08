@@ -105,6 +105,53 @@ const getTableDetails = () => {
   })
 };
 
+const getFilteredData = (req, res) => {
+
+  pool.query('SELECT * FROM people', (error, results) => {
+    if (error) {
+      throw error
+    }
+
+    const filter = req.body;
+    let filteredData = results.rows;
+
+    console.log("Start filtering");
+
+    if (filter.firstname) { 
+      filteredData = filteredData.filter((person)=> person.first_name === filter.firstname);
+    }
+    if (filter.lastname) {
+      filteredData = filteredData.filter((person)=> person.last_name === filter.lastname);
+    }
+    if (filter.gender) {
+      filteredData = filteredData.filter((person)=> person.gender === filter.gender);
+    }
+    if (filter.age) {
+      filteredData = filteredData.filter((person)=> person.age === filter.age);
+    }
+    if (filter.major) {
+      filteredData = filteredData.filter((person)=> person.major === filter.major);
+    }
+    if (filter.occupation) {
+      filteredData = filteredData.filter((person)=> person.occupation === filter.occupation);
+    }
+    if (filter.location) {
+      filteredData = filteredData.filter((person)=> person.location === filter.location);
+    }
+    console.log("End filtering");
+    
+    res.status(200).json(filteredData);
+  
+  })
+  
+
+
+
+    
+  
+
+}
+
 
 module.exports = {
   populatePeople,
@@ -112,5 +159,6 @@ module.exports = {
   createPerson,
   deletePerson,
   updatePerson,
-  getTableDetails
+  getTableDetails,
+  getFilteredData
 };

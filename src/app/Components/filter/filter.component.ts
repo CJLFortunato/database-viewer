@@ -16,12 +16,18 @@ export class FilterComponent implements OnInit {
   occupation: string = "";
   location: string = "";
 
-  @Output() onApplyFilter: EventEmitter<Filter | {}> = new EventEmitter();
+  @Output() onApplyFilter: EventEmitter<Filter> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
-    
+    this.firstName = "";
+    this.lastName = "";
+    this.gender = "";
+    this.age = 0;
+    this.major = "";
+    this.occupation = "";
+    this.location = "";
   }
 
   onSubmit() {

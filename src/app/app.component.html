@@ -2,13 +2,17 @@
   <h1>Fun with Databases</h1>
 </header>
 <main>
-  <app-filter (onApplyFilter)="makeFilter(filter)"></app-filter>
+  <app-filter (onApplyFilter)="getFilteredData($event)"></app-filter>
   <app-table [tableData]="data" (onClickDelete)="onDelete($event)" (onClickEdit)="onEdit($event)"></app-table>
   <div class="right-btn-ctn">
     <app-add-person (onAddPerson)="addPerson($event)"></app-add-person>
+    <button (click)="clearFilter()">Clear filter</button>
+
   </div>
   
 </main>
 <footer>
 <P>Made by CJL Fortunato</P>
 </footer>
+
+<!--  -->

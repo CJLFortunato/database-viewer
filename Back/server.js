@@ -15,13 +15,14 @@ app.use(
   })
 );
 
-db.getTableDetails();
+//db.getTableDetails();
 
 
 app.get('/', db.getPeople);
 app.post('/', db.createPerson);
 app.put('/', db.updatePerson);
 app.delete('/:id', db.deletePerson);
+app.post('/filter', db.getFilteredData);
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`);

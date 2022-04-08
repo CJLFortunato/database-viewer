@@ -17,9 +17,12 @@ export class ApiService {
 
   private apiUrl = 'http://localhost:3000';
 
+  private DATA: Person[] = [];
+
   constructor(private http: HttpClient) { }
 
   getPeople(): Observable<Person[]> {
+    
     return this.http.get<Person[]>(this.apiUrl);
   }
 
@@ -36,4 +39,11 @@ export class ApiService {
   editPerson(person: Person): Observable<Person> {
     return this.http.put<Person>(this.apiUrl, person, httpOptions);
   }
+
+  getFilteredData(filter:Filter) {
+    const url= `${this.apiUrl}/filter`;
+    return this.http.post<Person[]>(url, filter, httpOptions);
+
+  }
+  
 }

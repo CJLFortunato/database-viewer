@@ -10,8 +10,6 @@ import { ApiService } from 'src/app/services/api.service';
 export class AppComponent {
   title = 'fun-with-databases';
 
-  @Input() filter = {};
-
   data: Person[] = [];
 
   constructor(private apiService: ApiService) {
@@ -19,15 +17,15 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    console.log("Putting a ngOnInit in the app component works!");
+    
     this.apiService.getPeople().subscribe((people) => this.data = people);
     
+   
   }
-  makeFilter(filter: Filter | {}) {
 
-    this.filter = filter;
-    console.log("Filter saved in app component");
-    console.log(filter);
+  clearFilter() {
+    this.apiService.getPeople().subscribe((people) => this.data = people);
+
   }
 
   onDelete(id: string) {
@@ -42,5 +40,9 @@ export class AppComponent {
 
   onEdit(person: Person) {
     this.apiService.editPerson(person).subscribe(() => this.apiService.getPeople().subscribe((people) => this.data = people));
+  }
+
+  getFilteredData(filter: Filter) {
+    this.apiService.getFilteredData(filter).subscribe((people) => this.data = people);
   }
 }
