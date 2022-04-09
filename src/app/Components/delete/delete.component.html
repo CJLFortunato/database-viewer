@@ -1,8 +1,8 @@
-<button id="delete-btn" (click)="toggleDelete()">X</button>
+<button id="delete-btn" (click)="toggleDelete()"><fa-icon [icon]="faTimes"></fa-icon></button>
 
 
 <div class="delete-panel" *ngIf="showdelete">
-  <div class="top-bar"><h3>Delete - {{person.first_name}} {{person.last_name}}</h3><button (click)="toggleDelete()">X</button></div>
+  <div class="top-bar"><h3>Delete - {{person.first_name}} {{person.last_name}}</h3><button (click)="toggleDelete()"><fa-icon [icon]="faTimes"></fa-icon></button></div>
  
   <div class="text-ctn">
     <p>Are you sure you want to delete {{person.first_name}} {{person.last_name}} from the database ?</p>

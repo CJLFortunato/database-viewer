@@ -1,8 +1,8 @@
-<button id="add-btn" (click)="toggleAdd()">E</button>
+<button id="add-btn" (click)="toggleAdd()"><fa-icon [icon]="faPen"></fa-icon></button>
 
 
 <div class="details-panel" *ngIf="showEdit">
-  <div class="top-bar"><h3>Edit {{person.first_name}} {{person.last_name}}</h3><button (click)="toggleAdd()">X</button></div>
+  <div class="top-bar"><h3>Edit {{person.first_name}} {{person.last_name}}</h3><button (click)="toggleAdd()"><fa-icon [icon]="faTimes"></fa-icon></button></div>
 
   
 

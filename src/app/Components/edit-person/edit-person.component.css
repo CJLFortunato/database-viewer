@@ -109,3 +109,8 @@ label {
 .submit-btn:focus {
   outline: 2px solid black;
 }
+
+fa-icon {
+  font-size: .8rem;
+  color: hsl(0, 0%, 10%);
+}

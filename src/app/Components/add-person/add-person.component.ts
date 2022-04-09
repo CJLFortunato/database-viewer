@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Person } from 'src/app/Interfaces';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-person',
@@ -7,6 +8,8 @@ import { Person } from 'src/app/Interfaces';
   styleUrls: ['./add-person.component.css']
 })
 export class AddPersonComponent implements OnInit {
+
+  faTimes = faTimes;
 
   firstName: string = "";
   lastName: string = "";

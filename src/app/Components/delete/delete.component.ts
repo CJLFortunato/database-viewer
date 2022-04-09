@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Person } from 'src/app/Interfaces';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -22,6 +23,7 @@ export class DeleteComponent implements OnInit {
   @Output() onDeletePerson:EventEmitter<string> = new EventEmitter();
 
   showdelete: boolean = false;
+  faTimes = faTimes;
 
   constructor() { }
 

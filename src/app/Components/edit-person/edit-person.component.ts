@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { Person } from 'src/app/Interfaces';
+import { faTimes, faPen } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-edit-person',
@@ -7,6 +8,9 @@ import { Person } from 'src/app/Interfaces';
   styleUrls: ['./edit-person.component.css']
 })
 export class EditPersonComponent implements OnInit {
+
+  faTimes = faTimes;
+  faPen = faPen;
 
   @Input() person: Person = {
     id: "",
