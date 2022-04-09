@@ -4,11 +4,13 @@ const { response } = require('express');
 const data = require('./data').data;
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const db = require('./queries');
 const cors = require('cors');
+const serveStatic = require('serve-static');
 
-app.use(bodyParser.json(), cors());
+
+app.use(bodyParser.json(), cors(), serveStatic(__dirname + "/dist/"));
 app.use(
   bodyParser.urlencoded({
     extended: true,
