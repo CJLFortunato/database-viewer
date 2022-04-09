@@ -1,7 +1,10 @@
 .table {
   width: 55vw;
   height: 85vh;
-  border: 10px inset #cdc8c2;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  #797671 #f3eee9 #f3eee9 #797671 ;
+  border-radius: 0;
   overflow: scroll;
   background-color: white;
   margin: 0 15px;
@@ -56,7 +59,7 @@ table {
 
   th{
       background-color: #cdc8c2;
-      border: 3px outset #cdc8c2;
+      border: 1px solid #797671;
       font-weight: 400;
       padding: 4px;
   }

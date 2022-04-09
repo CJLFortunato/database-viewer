@@ -2,9 +2,9 @@
 
 
 <div class="details-panel" *ngIf="showEdit">
-  <div class="top-bar"><button (click)="toggleAdd()">X</button></div>
+  <div class="top-bar"><h3>Edit {{person.first_name}} {{person.last_name}}</h3><button (click)="toggleAdd()">X</button></div>
 
-  <h3>Edit a person</h3>
+  
 
   <form (ngSubmit)="onSubmit()">
   

@@ -1,22 +1,34 @@
 button {
     background-color: #cdc8c2;
-      border: 3px outset #cdc8c2;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #f3eee9 #797671 #797671 #f3eee9;
+    border-radius: 0;
       border-radius: 0;
       margin: 1px;
       /* width: 20px; */
   }
-  button:active {
-    border: 3px inset #cdc8c2;
-  }
-
+  button:hover {
+    outline: 1px dotted black;
+    
+}
+button:active {
+    border-color:  #797671 #f3eee9 #f3eee9 #797671 ;
+}
+button:focus {
+    outline: 2px solid black;
+}
   .details-panel{
     position: fixed;
-    border: 3px outset #cdc8c2;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #f3eee9 #797671 #797671 #f3eee9;
+    border-radius: 0;
     background-color: #cdc8c2;
     top: 180px;
     left: 700px;
-    width: 550px;
-    height: 600px;
+    width: 500px;
+    height: 550px;
     box-shadow: 2px 2px 0px black, -2px -2px 0px black;
     display: flex;
     flex-flow: column nowrap;
@@ -30,12 +42,17 @@ button {
     height: 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
   }
 
 
 h3 {
-    text-align: center;
+  color: white;
+  margin: 0 8px;
+  /* justify-self: flex-start; */
+  font-weight: 500;
 }
 
 form {
@@ -49,17 +66,27 @@ input {
     width: 75%;
     margin: 5px;
     height: 2rem;
-    border: 3px inset #cdc8c2;
+    border-width: 3px;
+    border-style: solid;
+    border-color:  #797671 #f3eee9 #f3eee9 #797671 ;
+    
+}
+input:focus {
+  outline: 2px solid blue;
 }
 label {
     margin-top: .5rem;
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .submit-btn {
-    border: 3px outset #cdc8c2;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #f3eee9 #797671 #797671 #f3eee9;
+    border-radius: 0;
+    background-color: #cdc8c2;
     margin-top: 0rem;
     width: 20%;
     height: 2rem;
@@ -70,4 +97,15 @@ label {
     font-weight: bold;
     font-size: 1.2rem;
     height: 1.5rem;
+    margin-top: 0.5rem;
+}
+.submit-btn:hover {
+  outline: 1px dotted black;
+  
+}
+.submit-btn:active {
+  border-color:  #797671 #f3eee9 #f3eee9 #797671 ;
+}
+.submit-btn:focus {
+  outline: 2px solid black;
 }

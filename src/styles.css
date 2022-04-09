@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     background-color: #cdc8c2;
+    
 }
+
+/* app-root {
+  border-color:  #797671 #f3eee9 #f3eee9 #797671 ;
+    border-width: 3px;
+    border-style: solid;
+} */
 
 @font-face {
   font-family: "W95FA";

@@ -1,22 +1,26 @@
 button {
     background-color: #cdc8c2;
-      border: 3px outset #cdc8c2;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #f3eee9 #797671 #797671 #f3eee9;
+    border-radius: 0;
       border-radius: 0;
       margin: 1px;
       /* width: 20px; */
-  }
-  button:active {
-    border: 3px inset #cdc8c2;
+      /* justify-self: flex-end; */
   }
 
   .details-panel{
     position: fixed;
-    border: 3px outset #cdc8c2;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #f3eee9 #797671 #797671 #f3eee9;
+    border-radius: 0;
     background-color: #cdc8c2;
     top: 180px;
     left: 700px;
     width: 550px;
-    height: 600px;
+    height: 580px;
     box-shadow: 2px 2px 0px black, -2px -2px 0px black;
     display: flex;
     flex-flow: column nowrap;
@@ -30,7 +34,17 @@ button {
     height: 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  h3 {
+    color: white;
+    margin: 0 8px;
+    /* justify-self: flex-start; */
+    font-weight: 500;
+
   }
 
   form {
@@ -45,7 +59,9 @@ input {
     width: 75%;
     margin: 5px;
     height: 2rem;
-    border: 3px inset #cdc8c2;
+    border-width: 3px;
+    border-style: solid;
+    border-color:  #797671 #f3eee9 #f3eee9 #797671 ;
 }
 input:disabled {
   background-color: #cdc8c2;
@@ -62,5 +78,16 @@ label {
     justify-self: flex-end;
     align-self: center;
     width: 15%;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    height: 2rem;
   }
+  button:hover {
+    outline: 1px dotted black;
+    
+}
+button:active {
+    border-color:  #797671 #f3eee9 #f3eee9 #797671 ;
+}
+button:focus {
+    outline: 2px solid black;
+}
