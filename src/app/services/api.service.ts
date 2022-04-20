@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class ApiService {
 
-  private apiUrl = 'http://localhost:3000/people';
+  private apiUrl = 'https://fun-with-databases.herokuapp.com/people';
 
   private DATA: Person[] = [];
 
