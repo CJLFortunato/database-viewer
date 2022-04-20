@@ -18,7 +18,7 @@ app.use(
   })
 );
 
-app.get('/*', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile('index.html', {root: 'dist/fun-with-databases/'}
 );
 });
