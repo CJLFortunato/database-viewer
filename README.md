@@ -1,36 +1,52 @@
 # FunWithDatabases
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project is a simple database viewer with CRUD functionality that I made to practice my Back-end skills.
 
-**Technos:** Angular, Node/Express.js, PostGreSQL
+## Table of contents:
 
-This project is a simple database viewer with CRUD functionality. You can even filter the data!
+* [Changelog](#changelog)
+* [Technologies used](#technologies-used)
+* [Features](#features)
+* [Sources](#sources)
+* [Other Infos](#other-infos)
+
+## Changelog
+ 
+* 20/04/2022 - Project deployed
+* 04/04/2022 - Project created
+
+## Technologies used
+
+Project has been created with:
+* Angular 13
+* NodeJS 14.18.1
+* PostGreSQL 14
+* ExpressJS 4.17.3
+* node-postgres 8.7.3
+* UUID 8.3.2
+
+Deployed using Heroku
+
+## Features
+
+* Displays the data returned from a PostGreSQL database
+* Filter that data using user input
+* Add items to the database
+* Remove items from the database
+* Edit data
+
+### To Do
+
+* Add possibility to sort the data by alphabetical order and the like
+
+## Sources
+
+I have been helped by the [Node.js, Express.js, and PostgreSQL: CRUD REST API example](https://blog.logrocket.com/nodejs-expressjs-postgresql-crud-rest-api-example/) and [Angular Crash Course](https://www.youtube.com/watch?v=3dHNOWTI7H8) tutorials.
+
+Design inspired by 90s Windows software.
+ 
+## Other Infos
+
+App made by CJL Fortunato.
 
 
-
-
-===============================================================================================================================================================================
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
