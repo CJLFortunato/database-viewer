@@ -3,14 +3,14 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 3000;
-
+const db = require('./queries');
 const cors = require('cors');
 //const serveStatic = require('serve-static');
 
 //app.set("view engine", "html");
 
 app.use(bodyParser.json(), cors());
-app.use('/', express.static(__dirname + 'dist'));
+app.use('/', express.static(__dirname + '/dist/fun-with-databases'));
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -18,7 +18,7 @@ app.use(
 );
 
 //db.getTableDetails();
-const db = require('./queries');
+
 
 app.get('/people', db.getPeople);
 app.post('/people', db.createPerson);
