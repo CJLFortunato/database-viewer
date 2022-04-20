@@ -1,19 +1,28 @@
-const pool = require('./config');
+//const pool = require('./config');
 const {
   v4: uuidv4
 } = require('uuid');
 
+const { Client } = require('pg');
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+client.connect();
 
 
 const populatePeople = (arr) => { // Used to populate the database after creation
   console.log('function started');
 
-
   for (const person of arr) {
 
     let id = uuidv4();
 
-    pool.query(
+    client.query(
       "INSERT INTO people(id, first_name, last_name, gender, age, major, occupation, location)VALUES($1, $2, $3, $4, $5, $6, $7, $8)",
       [id, person.firstname, person.lastname, person.gender, person.age, person.major, person.occupation, person.location],
       (err, res) => {
@@ -26,7 +35,7 @@ const populatePeople = (arr) => { // Used to populate the database after creatio
 }
 
 const getPeople = (request, response) => {
-    pool.query('SELECT * FROM people', (error, results) => {
+    client.query('SELECT * FROM people', (error, results) => {
       if (error) {
         throw error
       }
@@ -47,7 +56,7 @@ const createPerson = (request, response) => {
   } = request.body
   const id = uuidv4();
 
-  pool.query("INSERT INTO people(id, first_name, last_name, gender, age, major, occupation, location)VALUES($1, $2, $3, $4, $5, $6, $7, $8)",
+  client.query("INSERT INTO people(id, first_name, last_name, gender, age, major, occupation, location)VALUES($1, $2, $3, $4, $5, $6, $7, $8)",
   [id, first_name, last_name, gender, parseInt(age), major, occupation, location], (error, results) => {
     if (error) {
       
@@ -71,7 +80,7 @@ const updatePerson = (request, response) => {
     location
   } = request.body;
 
-  pool.query(
+  client.query(
     'UPDATE people SET first_name = $2, last_name = $3, gender = $4, age = $5, major = $6, occupation = $7, location = $8 WHERE id = $1',
     [id, first_name, last_name, gender, parseInt(age), major, occupation, location],
     (error, results) => {
@@ -87,7 +96,7 @@ const updatePerson = (request, response) => {
 const deletePerson = (request, response) => {
   const id = request.params.id;
 
-  pool.query('DELETE FROM people WHERE id = $1', [id], (error, results) => {
+  client.query('DELETE FROM people WHERE id = $1', [id], (error, results) => {
     if (error) {
       throw error
     }
@@ -99,7 +108,7 @@ const deletePerson = (request, response) => {
 };
 
 const getTableDetails = () => { // Because I forgot what the characters limit was
-  pool.query("SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'people'", (error, results) => {
+  client.query("SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'people'", (error, results) => {
     if (error) {
       throw error
     }
@@ -109,7 +118,7 @@ const getTableDetails = () => { // Because I forgot what the characters limit wa
 
 const getFilteredData = (req, res) => {
 
-  pool.query('SELECT * FROM people', (error, results) => {
+  client.query('SELECT * FROM people', (error, results) => {
     if (error) {
       throw error
     }
