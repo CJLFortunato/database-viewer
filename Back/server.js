@@ -5,7 +5,7 @@ const data = require('./data').data;
 
 const app = express();
 const port = process.env.PORT || 3000;
-const db = require('./queries');
+
 const cors = require('cors');
 //const serveStatic = require('serve-static');
 
@@ -20,7 +20,7 @@ app.use(
 );
 
 //db.getTableDetails();
-
+const db = require('./queries');
 
 app.get('/people', db.getPeople);
 app.post('/people', db.createPerson);
