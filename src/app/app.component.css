@@ -37,6 +37,15 @@ footer p {
     padding-left: 5px;
 }
 
+footer p a {
+    margin-left: 1rem;
+    text-decoration: none;
+}
+footer p a:hover {
+    margin-left: 1rem;
+    text-decoration: underline;
+}
+
 main {
     display: flex;
     flex-flow: row nowrap;
