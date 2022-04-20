@@ -10,12 +10,14 @@ const httpOptions = {
   })
 }
 
+const port = process.env['PORT'] || 3000;
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  private apiUrl = 'https://fun-with-databases.herokuapp.com/people';
+  private apiUrl = `https://localhost:${port}/people`;
 
   private DATA: Person[] = [];
 
