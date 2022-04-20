@@ -1,8 +1,8 @@
 const Pool = require('pg').Pool;
 
-
+const connexionString = process.env.DATABASE_URL;
 const pool = new Pool({
-  connexionString: process.env.DATABASE_URL,
+  connexionString: connexionString,
   ssl: {
     rejectUnauthorized: false,
   }
