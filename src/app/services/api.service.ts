@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class ApiService {
 
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'http://localhost:3000/people';
 
   private DATA: Person[] = [];
 

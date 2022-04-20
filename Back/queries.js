@@ -3,7 +3,9 @@ const {
   v4: uuidv4
 } = require('uuid');
 
-const populatePeople = (arr) => {
+
+
+const populatePeople = (arr) => { // Used to populate the database after creation
   console.log('function started');
 
 
@@ -28,7 +30,7 @@ const getPeople = (request, response) => {
       if (error) {
         throw error
       }
-      response.status(200).json(results.rows)
+      response.status(200).json(results.rows);
     })
   };
 
@@ -96,7 +98,7 @@ const deletePerson = (request, response) => {
   });
 };
 
-const getTableDetails = () => {
+const getTableDetails = () => { // Because I forgot what the characters limit was
   pool.query("SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'people'", (error, results) => {
     if (error) {
       throw error
@@ -114,8 +116,6 @@ const getFilteredData = (req, res) => {
 
     const filter = req.body;
     let filteredData = results.rows;
-
-    console.log("Start filtering");
 
     if (filter.firstname) { 
       filteredData = filteredData.filter((person)=> person.first_name === filter.firstname);
@@ -138,8 +138,7 @@ const getFilteredData = (req, res) => {
     if (filter.location) {
       filteredData = filteredData.filter((person)=> person.location === filter.location);
     }
-    console.log("End filtering");
-    
+
     res.status(200).json(filteredData);
   
   })

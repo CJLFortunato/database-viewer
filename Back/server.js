@@ -7,10 +7,12 @@ const app = express();
 const port = process.env.PORT || 3000;
 const db = require('./queries');
 const cors = require('cors');
-const serveStatic = require('serve-static');
+//const serveStatic = require('serve-static');
 
+//app.set("view engine", "html");
 
-app.use(bodyParser.json(), cors(), serveStatic(__dirname + "/dist/"));
+app.use(bodyParser.json(), cors());
+app.use('/', express.static('../dist/fun-with-databases'));
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -20,11 +22,11 @@ app.use(
 //db.getTableDetails();
 
 
-app.get('/', db.getPeople);
-app.post('/', db.createPerson);
-app.put('/', db.updatePerson);
-app.delete('/:id', db.deletePerson);
-app.post('/filter', db.getFilteredData);
+app.get('/people', db.getPeople);
+app.post('/people', db.createPerson);
+app.put('/people', db.updatePerson);
+app.delete('/people/:id', db.deletePerson);
+app.post('/people/filter', db.getFilteredData);
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`);
