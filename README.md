@@ -2,6 +2,8 @@
 
 This project is a simple database viewer with CRUD functionality that I made to practice my Back-end skills.
 
+See it live [here](https://fun-with-databases.herokuapp.com/).
+
 ## Table of contents:
 
 * [Changelog](#changelog)
