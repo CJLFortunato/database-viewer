@@ -12,7 +12,7 @@ const cors = require('cors');
 //app.set("view engine", "html");
 
 app.use(bodyParser.json(), cors());
-app.use('/', express.static('../dist/fun-with-databases'));
+app.use('/', express.static(__dirname + '/dist/fun-with-databases'));
 app.use(
   bodyParser.urlencoded({
     extended: true,
