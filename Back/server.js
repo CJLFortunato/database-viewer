@@ -10,13 +10,18 @@ const cors = require('cors');
 //app.set("view engine", "html");
 
 app.use(bodyParser.json(), cors());
-app.use('/', express.static('/dist/fun-with-databases'));
+//app.use('/', express.static('dist', 'fun-with-databases'));
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
 
+app.get('/*', function(req, res) {
+  res.sendFile('index.html', {root: 'dist/fun-with-databases/'}
+);
+});
 //db.getTableDetails();
 
 // app.get('/', (request, response) => {
