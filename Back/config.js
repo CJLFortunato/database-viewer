@@ -1,6 +1,6 @@
 const Pool = require('pg').Pool;
 
-const connexionString = process.env.DATABASE_URL + 'sslmode=require';
+const connexionString = process.env.DATABASE_URL + '&sslmode=require';
 
 console.log(connexionString);
 
