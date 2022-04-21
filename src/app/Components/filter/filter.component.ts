@@ -47,9 +47,9 @@ export class FilterComponent implements OnInit {
       occupation: this.occupation,
       location: this.location
     };
-    console.log(filterParams);
+  
     this.onApplyFilter.emit(filterParams);
-    console.log("Form submitted");
+ 
 
     this.firstName = "";
     this.lastName = "";

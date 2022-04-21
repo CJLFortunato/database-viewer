@@ -105,9 +105,8 @@ export class EditPersonComponent implements OnInit {
     };
 
     this.error = "";
-    console.log(editedPerson);
+ 
     this.onEditPerson.emit(editedPerson);
-    console.log("Form submitted");
 
     this.toggleAdd();
 

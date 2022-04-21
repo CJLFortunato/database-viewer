@@ -81,9 +81,9 @@ export class AddPersonComponent implements OnInit {
       occupation: this.occupation,
       location: this.location
     };
-    console.log(newPerson);
+
     this.onAddPerson.emit(newPerson);
-    console.log("Form submitted");
+
 
     this.firstName = "";
     this.lastName = "";
